@@ -15,13 +15,20 @@ const exampleTruck = {
 console.log("Step 1:", exampleTruck.describe());   // Welcome to Taco Rocket!
 
 // TODO: Make an object for YOUR truck with a name and a describe() method that uses this.name.
-// TODO: Log the result of calling describe().
+const jrcTruck = {
+  name: "Juicy Remedies",
+  describe: function () {
+    return "Welcome to " + this.name + "!";
+  },
+};
 
+// TODO: Log the result of calling describe().
+console.log("Step 1:", jrcTruck.describe()); //Welcome to Juicy Remedies
 
 // ---------- Step 2: Compare with an arrow function ----------
 // Example:
 const exampleArrowTruck = {
-  name: "Taco Rocket",
+  name: "Taco Truck",
   describe: () => {
     return "Welcome to " + this.name + "!";
   },
@@ -29,9 +36,23 @@ const exampleArrowTruck = {
 console.log("Step 2:", exampleArrowTruck.describe());   // the name is missing!
 
 // TODO: Add an arrow-function version to YOUR truck and log it.
+/*const jrcArrowTruck = {
+  name: "Juicy Remedies",
+  describe: () => {
+    return "Welcome to " + this.name + "!";
+  },
+};
+console.log("Step 2:", jrcArrowTruck.describe());   // the name is missing! 
+
 // TODO: Write one sentence in a comment: what went wrong with the arrow version?
 // (Hint: arrow functions don't get their own "this".)
-
+const jrcArrowTruck = {
+  name: "Juicy Remedies",
+  describe: () => {
+    return "Welcome to " + this.name + "!";
+  },
+};
+*/
 
 // ---------- Step 3: JSON text → JavaScript ----------
 // JSON is text that looks like an object. JSON.parse turns it into a real object.
@@ -43,6 +64,9 @@ console.log("Step 3 object:", exampleParsed);
 console.log("Step 3 price:", exampleParsed.price);
 
 // TODO: Write a JSON string for one of YOUR menu items. Parse it. Log one property.
+const menuItemJson = '{"name": "lemonade", "price": 2.8}'}
+const menuItemParsed = JSON.parse(menuItemJson);
+console.log("Step 3 text:", menuItemJson);
 
 
 // ---------- Step 4: JavaScript → JSON text ----------
@@ -51,8 +75,18 @@ const exampleBack = JSON.stringify(exampleParsed);
 console.log("Step 4:", exampleBack, typeof exampleBack);   // it's a string again
 
 // TODO: Turn your parsed menu item back into a JSON string and log it with typeof.
-
+const menuItemBack = JSON.stringify(menuItemParsed);
+console.log("STEP 4:", menuItemBack, typeof menuItemBack); //it's a string again
 
 // ---------- Extra practice (if you finish early) ----------
 // 1. Make a second truck object with its own describe() method.
+const jrcArrowTruck = {
+  name: "Juicy Remedies",
+  describe: () => {
+    return "Welcome to " + this.name + "!";
+  },
+};
+console.log("Second JRC menu item:", jrcArrowTruck.describe());   // the name is missing! 
+
 // 2. Pretty JSON: try JSON.stringify(yourItem, null, 2) and compare.
+JSON.stringify(menuItemBack, null, 2);
