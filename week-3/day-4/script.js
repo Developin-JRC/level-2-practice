@@ -1,13 +1,13 @@
 // Day 4 — Loops: for and forEach
-// A loop runs the same code once for every item in a list.
+// A loop runs the same code once for every itecommand:workbench.action.openSettings?%5B%22git.openRepositoryInParentFolders%22%5Dm in a list.
 // Tomorrow's graded work uses both loops, so practice them here.
 
 // TODO first: replace this menu with YOUR truck's menu (keep the same shape).
 const menu = [
-  { name: "Taco", price: 4.5 },
-  { name: "Burrito", price: 9 },
-  { name: "Nachos", price: 6.25 },
-  { name: "Churro", price: 3 },
+  { name: "Lemonade", price: 2.80 },
+  { name: "Matcha", price: 6.99 },
+  { name: "Chai-latte", price: 5.25 },
+  { name: "Sorrel", price: 3 },
 ];
 
 
@@ -19,6 +19,8 @@ for (let i = 0; i < menu.length; i++) {
 
 // TODO: Write a for loop that logs every item's PRICE.
 
+for (let i = 0; i < 3; i++)
+  console.log("for loop:", menu[i].price);
 
 // ---------- Step 2: forEach ----------
 // Same job, shorter to write. forEach hands you each item, one at a time.
@@ -28,7 +30,12 @@ menu.forEach(function (item) {
 });
 
 // TODO: Use forEach to log a sentence for each item, like "Taco costs $4.5".
-
+menu.forEach(function(item)){
+  console.log("forEach:", Lemonade.price);
+  console.log("forEach:", Matcha.price);
+  console.log("forEach", Sorrel.price);
+  console.log("forEach", Chai-latte,price);
+}
 
 // ---------- Step 3: Put the menu on the page ----------
 // Example: one item, made safely with createElement + textContent.
