@@ -3,9 +3,10 @@
 
 // TODO first: change this to YOUR truck's menu.
 const menu = [
-  { name: "Taco", price: 4.5 },
-  { name: "Burrito", price: 9 },
-  { name: "Nachos", price: 6.25 },
+  { name: "Lemonade", price: 2.8 },
+  { name: "Sorrel", price: 4.95 },
+  { name: "Ginger tea", price: 3.25 },
+  { name: "Chai latte", price: 6.79 },
 ];
 
 
@@ -14,13 +15,16 @@ const menu = [
 const names = menu.map(function (item) {
   return item.name;
 });
-console.log("names:", names);   // ["Taco", "Burrito", "Nachos"]
+console.log("names:", names); // ["Lemonade", "Sorrel", "Ginger tea", "Chai latte"]
 
 
 // ---------- Step 1 ----------
 // TODO: Use map to make a new list called labels, like "Taco — $4.50".
 // Hint: item.price.toFixed(2) shows two decimal places.
-
+const labels = menu.map(function(item) {
+  return item.labels
+});
+console.log("labels:", labels); //Lemonade, Sorrel, Ginger tea, Chai latte
 
 // ---------- Step 2 ----------
 // TODO: Use forEach to show every label on the page as an <li> in #menu-list.
