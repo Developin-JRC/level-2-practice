@@ -9,9 +9,16 @@
 // First: replace this menu with YOUR truck's menu (keep the same shape).
 const menu = [
   { name: "Lemonade", price: 2.8 },
-  { name: "Sorrel", price: 5.69 },
-  { name: "Ginger tea", price: 3.95 },
+  { name: "Ginger Tea", price: 3.95 },
+  { name: "Peppermint", price: 3.95 },
+  { name: "Red Raspberry", price: 3.95 },
+  { name: "Chamomile", price: 3.95 },
   { name: "Chai latte", price: 4.79 },
+  { name: "Sorrel", price: 5.69 },
+  { name: "Warm Apple Cider", price: 5.69 },
+  { name: "Hot Chocolate", price: 5.69 },
+  { name: "Egg Nog", price: 5.69 },
+  { name: "Coquito", price: 5.69 },
 ];
 
 
