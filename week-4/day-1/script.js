@@ -9,9 +9,9 @@
 // First: replace this menu with YOUR truck's menu (keep the same shape).
 const menu = [
   { name: "Lemonade", price: 2.8 },
-  { name: "Sorrel", price: 4.95 },
-  { name: "Ginger tea", price: 3.25 },
-  { name: "Chai latte", price: 6.79 },
+  { name: "Sorrel", price: 5.69 },
+  { name: "Ginger tea", price: 3.95 },
+  { name: "Chai latte", price: 4.79 },
 ];
 
 
@@ -33,7 +33,7 @@ menu.forEach(logName);
 // YOUR TURN: log every item's PRICE.
 // Change: logName → logPrice (2 places), and .name → .price
 function logPrice(item){
-  console.log(item.price);
+  console.log(item.price.toFixed(2));
 }
 menu.forEach(logPrice);
 
@@ -44,8 +44,7 @@ menu.forEach(logPrice);
 menu.forEach(function (item) {
   console.log(item.name + " is on the menu");
 });
-console.log("names:", names); // ["Lemonade", "Sorrel", "Ginger tea", "Chai latte"]
-
+console.log("names:", names); // ["Lemonade", "Sorrel", "Ginger tea", "Chai Latte"]
 
 // ---------- Step 1 ----------
 // TODO: Use map to make a new list called labels, like "Taco — $4.50".
