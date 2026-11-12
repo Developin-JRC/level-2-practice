@@ -32,7 +32,10 @@ menu.forEach(logName);
 
 // YOUR TURN: log every item's PRICE.
 // Change: logName → logPrice (2 places), and .name → .price
-
+function logPrice(item){
+  console.log(item.price);
+}
+menu.forEach(logPrice);
 
 // ---------- Step 2: Write the function right inside ----------
 // EXAMPLE: logs "Taco is on the menu", "Burrito is on the menu"...
