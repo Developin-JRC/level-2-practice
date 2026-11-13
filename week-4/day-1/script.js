@@ -40,9 +40,12 @@ menu.forEach(logName);
 // YOUR TURN: log every item's PRICE.
 // Change: logName → logPrice (2 places), and .name → .price
 function logPrice(item){
-  console.log(item.price.toFixed(2));
+  console.log(item.price);
 }
 menu.forEach(logPrice);
+menu.forEach(function (item) {
+  console.log(item.name + " costs $" + item.price);
+});
 
 // ---------- Step 2: Write the function right inside ----------
 // EXAMPLE: logs "Taco is on the menu", "Burrito is on the menu"...
@@ -59,7 +62,7 @@ console.log("names:", names); // ["Lemonade", "Sorrel", "Ginger tea", "Chai Latt
 const labels = menu.map(function(item) {
   return item.labels
 });
-console.log("labels:", labels); //Lemonade, Sorrel, Ginger tea, Chai latte
+console.log("labels:", labels);
 
 // ---------- Extra (if you finish early): add it up ----------
 // EXAMPLE: COUNT the items. count starts at 0 BEFORE forEach,
