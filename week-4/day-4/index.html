@@ -16,10 +16,11 @@
     <!-- TODO: give the div below these classes: row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3
          That means: 1 column on phones, 2 from small screens up, 3 from large screens up. -->
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-      <div class="col">
-        <div class="p-4 bg-light border">Lemonade</div></div>
+      <div class="col"><div class="p-4 bg-light border">Lemonade</div>
+    </div>
       <div class="col"><div class="p-4 bg-light border">Coffee</div></div>
-      <div class="col"><div class="p-4 bg-light border">Herbal Teas</div></div>
+      <div class="col"><div class="p-4 bg-light border">Herbal Teas</div>
+    </div>
       <div class="col"><div class="p-4 bg-light border">Lattes</div></div>
       <div class="col"><div class="p-4 bg-light border">Seasonal</div></div>
       <div class="col"><div class="p-4 bg-light border">Specials</div></div>
@@ -31,14 +32,20 @@
     <!-- If you finish early: copy the six items into the div below (without the "col" wrappers),
          then compare the plain CSS in the <style> block with the Bootstrap classes above. -->
     <h2 class="mt-5">Extra 1: plain CSS grid</h2>
-    <div class="plain-grid"></div>
-
+      <div class="plain-grid"></div>
+        <div class="p-4 bg-light border">Lemonade</div>
+        <div class="p-4 bg-light border">Coffee</div>
+        <div class="p-4 bg-light border">Herbal Teas</div>
+        <div class="p-4 bg-light border">Lattes</div>
+        <div class="p-4 bg-light border">Seasonal</div>
+        <div class="p-4 bg-light border">Specials</div>
+      </div>
 
     <!-- ========== Extra 2: a grid made by JavaScript (script.js) ========== -->
     <!-- Review of Monday + Tuesday: forEach + createElement. Nothing new. -->
     <h2 class="mt-5">Extra 2: grid from JavaScript</h2>
     <div id="js-grid" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3"></div>
-  </main>
+    </div>
 
   <style>
     .plain-grid {

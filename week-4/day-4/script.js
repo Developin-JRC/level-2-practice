@@ -2,7 +2,7 @@
 // Nothing new today. This is Monday's forEach + Tuesday's createElement, together.
 
 // First: replace this list with YOUR truck's six things.
-const things = ["Tacos", "Burritos", "Nachos", "Churros", "Drinks", "Specials"];
+const things = ["Lemonade", "Herbal Teas", "Coffee", "Lattes", "Chocolate", "Seasonal"];
 
 const grid = document.getElementById("js-grid");
 
@@ -24,3 +24,14 @@ grid.appendChild(col);   // ...and the column goes inside the grid
 //   things.forEach(function (thing) { ... });
 // and change the text to thing. Then delete the example above.
 // Check: resize the window. Your JavaScript grid goes 1 → 2 → 3 columns too.
+things.forEach(function(thing){
+ col.className = "col";
+ 
+ const box = document.createElement("div");
+ box.className = "p-4 bg-warning-subtle border";
+ box.textContent = thing;
+
+ col.appendChild(box);
+ grid.appendChild(col);
+});
+
