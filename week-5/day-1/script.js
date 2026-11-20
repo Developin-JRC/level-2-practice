@@ -7,13 +7,13 @@
 //   2. Copy it under YOUR TURN, or change it where the comment says.
 
 // First: put YOUR truck's city here. Get the numbers from your "Find my city" request.
-const latitude = 30.27;
-const longitude = -97.74;
+const latitude = 35.22709;
+const longitude = -80.84313;
 
 // The same address you sent in your API tool, built from the pieces.
 const url =
   "https://api.open-meteo.com/v1/forecast?latitude=" + latitude +
-  "&longitude=" + longitude + "&current=temperature_2m,wind_speed_10m";
+  "&longitude=" + longitude + "&current=temperature_2m" + "&temperature_unit=fahrenheit";
 
 
 // ---------- Step 1: Send the request ----------
@@ -23,25 +23,30 @@ async function getWeather() {
   console.log("Status:", response.status); // 2. same status your API tool showed you (200 = OK)
   const data = await response.json();      // 3. read the body as JSON, wait again
   console.log(data);                       // 4. the same body your API tool showed you
-
+//const wind_speed = await response.json(); 
   // ---------- Step 2: Dig out one value ----------
   // EXAMPLE: the body is an object. Use dots to walk into it, like in your API tool's body view.
-  console.log("Temperature:", data.current.temperature_2m);
+  //console.log("Temperature:", data.current.temperature_2m);
 
   // YOUR TURN: log the wind speed. Find its name in the console's object first.
+console.log("Temperature:", data.current.temperature_2m);
+console.log("Wind:", data.current.wind_speed_10m);
 
 
   // ---------- Step 3: Put it on the page ----------
   // EXAMPLE: the number, plus its unit (the unit lives in current_units).
-  const weather = document.getElementById("weather");
+  const wind_speed = document.getElementById("wind-speed");
+  
   weather.textContent = "Temperature: " + data.current.temperature_2m + " " +
-    data.current_units.temperature_2m;
-
+      data.current_units.temperature_2m + ". Wind: " +
+      data.current_wind_speed_10m;
+      
   // YOUR TURN: don't copy this one. Change the example above,
   // so the page also shows the wind speed and its unit.
 }
 
 getWeather();
+const wind_speed = document.getElementById("wind_speed_10m");
 
 
 // ---------- Extra (if you finish early): who prints first? ----------
