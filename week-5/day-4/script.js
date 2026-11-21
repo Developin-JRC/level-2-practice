@@ -1,34 +1,28 @@
 // Week 5 Day 4 — Recipe Finder: show a few fields, and handle what goes wrong
 // The recipes come from DummyJSON, a free practice API: https://dummyjson.com/docs/recipes
 // Open index.html with Live Server, type a number, click the button.
+async function loadRecipe(){
 
-const input = document.getElementById("recipe-id");
-const button = document.getElementById("load-btn");
-const statusText = document.getElementById("status");
-const recipeArea = document.getElementById("recipe");
+  const  url = "https://dummyjson.com/docs/recipes";
+  
+  statusText.textContent = "Loading...";
 
+  await fetch(url);
+  const recipe = await Response.json();
+  statusText.textContent = ""; //clear the old recipe first
 
-async function loadRecipe() {
-  const url = "https://dummyjson.com/recipes/" + input.value;
+  document.getElementById("recipe");
+  const button;
 
-  recipeArea.textContent = "";   // clear the old recipe first
+  await Response.json(); 
+  console.log(recipe); //look at ALL the fields in the console
 
-  // ---------- Step 2 goes here (loading message) ----------
-
-
-  const response = await fetch(url);
-
-  // ---------- Step 3 goes here (no recipe with that number) ----------
-
-
-  const recipe = await response.json();
-  console.log(recipe);   // look at ALL the fields in the console, then pick a few
 
   // ---------- Step 1: show a few fields ----------
   // EXAMPLE: a card with the recipe's name. Same 4 moves as Week 4.
   const card = document.createElement("div");
   card.className = "card p-3";
-
+  
   const title = document.createElement("h2");
   title.className = "h4";
   title.textContent = recipe.name;
@@ -40,9 +34,19 @@ async function loadRecipe() {
   //   a <p> with the cuisine:           "Cuisine: Italian"
   //   a <p> with the prep time:         "Ready in 20 minutes"   (recipe.prepTimeMinutes)
   // Each one: createElement, textContent, card.appendChild.
+  const cuisine = document.createElement("h2");
+  cuisine.className = "fs-3 h4";
+  cuisine.textContent = recipe.cuisine;
+  card.appendChild(cuisine);
+  
+  const ready = document.createElement("h2");
+  ready.className = "fs-3 h4";
+  ready.textContent = 'Ready in ${recipe.cookTimeMinutes} minutes';
+
+    recipeArea.appendChild(card);
 }
 
-button.addEventListener("click", loadRecipe);
+  button.addEventListener("click", loadRecipe);
 
 
 // ---------- Step 2: a loading message ----------
