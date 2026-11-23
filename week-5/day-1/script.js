@@ -6,7 +6,7 @@
 //   1. Read the EXAMPLE. Save, and see what it does (console + page).
 //   2. Copy it under YOUR TURN, or change it where the comment says.
 
-// First: put YOUR truck's city here. Get the numbers from your "Find my city" request.
+// First: Charlotte. Get the numbers from your "Find my city" request.
 const latitude = 35.22709;
 const longitude = -80.84313;
 
@@ -30,16 +30,17 @@ async function getWeather() {
 
   // YOUR TURN: log the wind speed. Find its name in the console's object first.
 console.log("Temperature:", data.current.temperature_2m);
-console.log("Wind:", data.current.wind_speed_10m);
+console.log("Wind:", data.current.wind_speed_10m); //Error: wind is  undefined
 
 
   // ---------- Step 3: Put it on the page ----------
-  // EXAMPLE: the number, plus its unit (the unit lives in current_units).
-  const wind_speed = document.getElementById("wind-speed");
+  // EXAMPLE: the number, plus its unit (the unit lives in current_units).?? Wind is undefined
+  const timezone = document.getElementById("timezone"); //using timezone for testing
+  const time = document.getElementById("time"); 
   
   weather.textContent = "Temperature: " + data.current.temperature_2m + " " +
-      data.current_units.temperature_2m + ". Wind: " +
-      data.current_wind_speed_10m;
+      data.current_units.temperature_2m + ". Time: " +
+      data.current.time  + data.timezone;
       
   // YOUR TURN: don't copy this one. Change the example above,
   // so the page also shows the wind speed and its unit.
