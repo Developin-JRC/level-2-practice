@@ -16,7 +16,13 @@ const results = document.getElementById("results");
 
 async function searchCharacters() {
   // A template literal: backticks ` ` instead of quotes, and ${...} drops a value into the text.
-  try { 
+  if (searchBox.value.trim() === "") {
+    statusText.textContent = "Type a name first."
+    results.textContent = "";
+    return;
+  } //empty search box
+.trim() //removes spaces, so a box with only spaces counts as empty too
+  try {  
   const url = `https://rickandmortyapi.com/api/character/?name=${searchBox.value}`;
 
   // ---------- Step 1 goes here: clear old results + LOADING ----------
@@ -37,12 +43,15 @@ async function searchCharacters() {
     //!response.ok catches every bad status: 404, and 500 (server broke)
     const data = await response.json();
     console.log(data);
-    statusText.textContent = "";  
+    statusText.textContent = "";   
 
   // Step 1: #2 - Take the Searching... message away so it isn't there after you get your results
 
   // SUCCESS: one list item per character
-  data.results.forEach(function (character) {
+  //first show count:
+  // statusText.textContent = `Found ${data.info.count} characters`; 
+  // rick should return 107 and DOES NOT WORK !!
+  data.results.forEach(function (character) { // SUCCESS: 1 list item per char
     const item = document.createElement("li");
     item.className = "list-group-item";
     item.textContent = `${character.name} (${character.species}, ${character.status})`;
